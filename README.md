@@ -1,4 +1,5 @@
-# Sentium training software
+# Sentium training software![preview](https://github.com/SentiumProject/Sentium-bots/assets/98888240/eb176003-3ebd-4d93-83b6-ea605019c911)
+
 
 # Install, update, join (deployment) >>>
 Read our quick guide to installing and using Sentium: (Cooming Soon)
