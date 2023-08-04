@@ -1,6 +1,6 @@
 # Sentium training software.
 
-[Group 64](https://github.com/SentiumProject/Sentium-bots/assets/98888240/73f7276b-9cfe-410e-aa45-b162d0b817de)
+![Group 64](https://github.com/SentiumProject/Sentium-bots/assets/98888240/d192c4ee-601f-4690-a789-ed6bb158f6e4)
 
 # Install, update, join (deployment) >>>
 Read our quick guide to installing and using Sentium: (Coming Soon)
