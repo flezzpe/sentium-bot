@@ -1,5 +1,8 @@
---SentiumBots Source [Coded by FlessPe#9449 | Java.dll]
-if game:GetService("Players").LocalPlayer.Name == "Nafisiuwu" then
+--// SENTIUM-Bots [Code by FlessPe#9449 | Java.dll]
+
+local Owner = "";
+
+if game:GetService("Players").LocalPlayer.Name == Owner then
 local Main = Instance.new("ScreenGui")
 local Loader = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -54,7 +57,7 @@ TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.181983188, 0, 0.651101887, 0)
 TextLabel.Size = UDim2.new(0, 172, 0, 49)
 TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = "Did you know that Sentium works best together with Script-Ware?))."
+TextLabel.Text = "Did you know that Sentium works best together with Script-Ware?"
 TextLabel.TextColor3 = Color3.fromRGB(184, 184, 184)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 17.000
