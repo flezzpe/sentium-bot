@@ -10,3 +10,5 @@ You can communicate with other Sentium users in our [Discord server]: dsc.gg/sen
 
 # Problems with reports
 If something is not working as expected, please report to us in the Discord server.
+
+[![test](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
