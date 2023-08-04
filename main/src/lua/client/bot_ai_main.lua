@@ -1,7 +1,8 @@
-local Owner = "";
+local Owner = ""; --// Owner Name
+local Friend = "";
 --// 💜💙💚💛🧡❤️ //--
 
-if game:GetService("Players").LocalPlayer.Name ~= Owner then
+if game:GetService("Players").LocalPlayer.Name ~= Owner or Friend then
     WebSockett = WebSocket.connect("ws://127.0.0.1:1337//GlobalChannel")
     game.RunService:Set3dRenderingEnabled(false)
     UserSettings().GameSettings.MasterVolume = 0
@@ -118,7 +119,7 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
         spawn(
             function()
                 local i = 10
-                --// You can change {angle and rgdist} for make orbit faster and change look pos.
+				--// You can change {angle and rgdist} for make orbit faster and change look pos.
                 local angle = 0
                 local int = 1
                 local rgdist = 6
@@ -128,7 +129,7 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
                     wait()
                     i = i + 0.05
                     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
-                        game:GetService("Workspace"):FindFirstChild("Nafisiuwu").HumanoidRootPart.CFrame *
+                        game:GetService("Workspace"):FindFirstChild(Owner).HumanoidRootPart.CFrame *
                         CFrame.fromEulerAnglesXYZ(angle, i * int, 0) *
                         CFrame.new(0, 0, rgdist)
                 end
@@ -187,8 +188,8 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
                         TweenInfo.new(1),
                         {
                             CFrame = CFrame.new(
-                                game:GetService("Workspace"):FindFirstChild("Nafisiuwu").HumanoidRootPart.Position -
-                                Vector3.new(math.random(-25, 25), 0.8, math.random(-25, 25))
+                                game:GetService("Workspace"):FindFirstChild(Owner).HumanoidRootPart.Position -
+                                    Vector3.new(math.random(-25, 25), 0.8, math.random(-25, 25))
                             )
                         }
                     ):Play()
@@ -205,8 +206,8 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
                         TweenInfo.new(0.1),
                         {
                             CFrame = CFrame.new(
-                                game:GetService("Workspace"):FindFirstChild("Nafisiuwu").HumanoidRootPart.Position -
-                                Vector3.new(0, -15, 0)
+                                game:GetService("Workspace"):FindFirstChild(Owner).HumanoidRootPart.Position -
+                                    Vector3.new(0, -15, 0)
                             )
                         }
                     ):Play()
@@ -290,8 +291,8 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
             for i, v in pairs(game:GetDescendants()) do
                 if
                     v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or
-                    v:IsA("TrussPart")
-                then
+                        v:IsA("TrussPart")
+                 then
                     v.Material = "Plastic"
                     v.Reflectance = 0
                 elseif v:IsA("Decal") then
@@ -306,9 +307,9 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
             for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
                 if
                     v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or
-                    v:IsA("BloomEffect") or
-                    v:IsA("DepthOfFieldEffect")
-                then
+                        v:IsA("BloomEffect") or
+                        v:IsA("DepthOfFieldEffect")
+                 then
                     v.Enabled = false
                 end
             end
@@ -341,8 +342,8 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
             for i, v in pairs(game:GetDescendants()) do
                 if
                     v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or
-                    v:IsA("TrussPart")
-                then
+                        v:IsA("TrussPart")
+                 then
                     v.Material = "Plastic"
                     v.Reflectance = 0
                 elseif v:IsA("Decal") then
@@ -357,9 +358,9 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
             for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
                 if
                     v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or
-                    v:IsA("BloomEffect") or
-                    v:IsA("DepthOfFieldEffect")
-                then
+                        v:IsA("BloomEffect") or
+                        v:IsA("DepthOfFieldEffect")
+                 then
                     v.Enabled = false
                 end
             end
@@ -455,9 +456,9 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
             if command.typee == "walk" then
                 if
                     (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position -
-                    game:GetService("Players"):FindFirstChild("Nafisiuwu").Character.HumanoidRootPart.Position).Magnitude >
-                    15
-                then
+                        game:GetService("Players"):FindFirstChild(Owner).Character.HumanoidRootPart.Position).Magnitude >
+                        15
+                 then
                     findTarget(workspace[command.Player].HumanoidRootPart.Position)
                 end
             end
@@ -556,6 +557,6 @@ if game:GetService("Players").LocalPlayer.Name ~= Owner then
         end
     end
     WebSockett.OnMessage:Connect(function(Msg)
-        execute(Msg)
+    execute(Msg)
     end)
 end
