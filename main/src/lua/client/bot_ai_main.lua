@@ -1,6 +1,7 @@
-if game:GetService("Players").LocalPlayer.Name ~= "Nafisiuwu" then
+local Owner = "";
+
+if game:GetService("Players").LocalPlayer.Name ~= Owner then
 	WebSockett = WebSocket.connect("ws://127.0.0.1:1337//GlobalChannel")
-	
 	game.RunService:Set3dRenderingEnabled(false)
 	UserSettings().GameSettings.MasterVolume = 0
 		  local VirtualUser=game:service'VirtualUser'
