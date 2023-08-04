@@ -1,8 +1,9 @@
-# Sentium training software![preview](https://github.com/SentiumProject/Sentium-bots/assets/98888240/eb176003-3ebd-4d93-83b6-ea605019c911)
+# Sentium training software.
 
+[Group 64](https://github.com/SentiumProject/Sentium-bots/assets/98888240/73f7276b-9cfe-410e-aa45-b162d0b817de)
 
 # Install, update, join (deployment) >>>
-Read our quick guide to installing and using Sentium: (Cooming Soon)
+Read our quick guide to installing and using Sentium: (Coming Soon)
 
 # Community
 You can communicate with other Sentium users in our Discord server: dsc.gg/sentiumproject
