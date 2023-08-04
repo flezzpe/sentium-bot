@@ -1,6 +1,6 @@
 --// SENTIUM-Bots [Code by FlessPe#9449 | Java.dll]
 
-local Owner = ""
+local Owner = "" --// Owner=Name
 
 if game:GetService("Players").LocalPlayer.Name == Owner then
     local Main = Instance.new("ScreenGui")
