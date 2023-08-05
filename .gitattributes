@@ -1,6 +1,5 @@
 *.dll linguist-language=C#
 *.exe linguist-language=C++
-*.bat linguist-language=Java
 * text=auto
 *.png binary
 *.rtf binary
