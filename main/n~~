@@ -348,7 +348,7 @@ function ui.create_section(name: string, image_id: number)
 	end)
 end
 
-function ui.create_toggle(name: string, section: string, keybind, callback)
+function ui.create_toggle(name: string, section: string, callback)
 	callback = callback or function() end
 	local toggled = false
 	local keybind = nil
@@ -497,70 +497,68 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 		if keybind ~= nil then
 			Title_2.TextTransparency = 0
 		end
-		
+
 		if not section:match(ui.section) then
 			Example.Visible = false
 		else
 			Example.Visible = true
 		end
-
-		if toggled then
-			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-				ImageTransparency = 0.25,
-			}):Play()
-		else
-			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-				ImageTransparency = 1,
-			}):Play()
-		end
 	end)
-	
+
 	UserInputService.InputEnded:Connect(function(input, is_event)
 		if is_event or keybind == nil then
 			return
 		end
-		
+
 		if input.KeyCode == keybind then
 			toggled = not toggled
 
 			callback(toggled)
-			
+
 			if toggled then
 				ui.notify.render_Notify(`{name} enabled!`, 4)
+				
+				TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+					ImageTransparency = 0.25,
+				}):Play()
 			else
 				ui.notify.render_Notify(`{name} disabled!`, 4)
+				
+				TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+					ImageTransparency = 1,
+				}):Play()
 			end
 		end
 	end)
-	
+
 	KeyHitbox.MouseButton1Up:Connect(function()
 		local temp_key = nil
-		
+
 		repeat 
 			temp_key = UserInputService.InputEnded:Wait() 
 		until temp_key.KeyCode ~= Enum.KeyCode.Unknown
-		
+
 		if temp_key.KeyCode == Enum.KeyCode.Escape or temp_key.KeyCode == Enum.KeyCode.Insert or temp_key.KeyCode == Enum.KeyCode.RightShift then
 			keybind = nil
-			
+
 			TweenService:Create(Title_2, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 				TextTransparency = 1,
 			}):Play()
 			Title_2.Text = '...'
-			
+
 			return
 		end
-		
+
 		keybind = temp_key.KeyCode
 		Title_2.Text = temp_key.KeyCode.Name
-		
+
 		temp_key = nil
-		
+
 		TweenService:Create(Title_2, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 			TextTransparency = 0,
 		}):Play()
 	end)
-	
+
 	KeyHitbox.MouseEnter:Connect(function()
 		if keybind ~= nil then
 			return
@@ -580,7 +578,7 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 			TextTransparency = 1,
 		}):Play()
 	end)
-	
+
 	Hitbox.MouseEnter:Connect(function()
 		if toggled then
 			return
@@ -590,12 +588,12 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 			ImageTransparency = 0.645,
 		}):Play()
 	end)
-	
+
 	Hitbox.MouseLeave:Connect(function()
 		if toggled then
 			return
 		end
-		
+
 		TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 			ImageTransparency = 1,
 		}):Play()
@@ -605,12 +603,32 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 		toggled = not toggled
 
 		callback(toggled)
+		
+		if toggled then
+			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+				ImageTransparency = 0.25,
+			}):Play()
+		else
+			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+				ImageTransparency = 1,
+			}):Play()
+		end
 	end)
 
 	Hitbox.TouchTap:Connect(function()
 		toggled = not toggled
 
 		callback(toggled)
+		
+		if toggled then
+			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+				ImageTransparency = 0.25,
+			}):Play()
+		else
+			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+				ImageTransparency = 1,
+			}):Play()
+		end
 	end)
 end
 
