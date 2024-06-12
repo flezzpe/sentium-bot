@@ -391,7 +391,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	Title.Size = UDim2.new(0.291553348, 0, 0.441653311, 0)
 	Title.ZIndex = 10
 	Title.Font = Enum.Font.GothamBold
-	Title.Text = "Example"
+	Title.Text = name
 	Title.TextColor3 = Color3.fromRGB(231, 231, 243)
 	Title.TextScaled = true
 	Title.TextSize = 14.000
