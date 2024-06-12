@@ -503,6 +503,16 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 		else
 			Example.Visible = true
 		end
+
+		if toggled then
+			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+				ImageTransparency = 0.25,
+			}):Play()
+		else
+			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+				ImageTransparency = 1,
+			}):Play()
+		end
 	end)
 	
 	UserInputService.InputEnded:Connect(function(input, is_event)
@@ -512,20 +522,13 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 		
 		if input.KeyCode == keybind then
 			toggled = not toggled
+
 			callback(toggled)
 			
 			if toggled then
 				ui.notify.render_Notify(`{name} enabled!`, 4)
-				
-				TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-					ImageTransparency = 0.25,
-				}):Play()
 			else
 				ui.notify.render_Notify(`{name} disabled!`, 4)
-				
-				TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-					ImageTransparency = 1,
-				}):Play()
 			end
 		end
 	end)
@@ -602,32 +605,12 @@ function ui.create_toggle(name: string, section: string, keybind, callback)
 		toggled = not toggled
 
 		callback(toggled)
-
-		if toggled then
-			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-				ImageTransparency = 0.25,
-			}):Play()
-		else
-			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-				ImageTransparency = 1,
-			}):Play()
-		end
 	end)
 
 	Hitbox.TouchTap:Connect(function()
 		toggled = not toggled
 
 		callback(toggled)
-
-		if toggled then
-			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-				ImageTransparency = 0.25,
-			}):Play()
-		else
-			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-				ImageTransparency = 1,
-			}):Play()
-		end
 	end)
 end
 
