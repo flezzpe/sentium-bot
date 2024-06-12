@@ -286,7 +286,7 @@ function ui.create_section(name: string, image_id: number)
 	Example.Position = UDim2.new(0.320491582, 0, 0.050743565, 0)
 	Example.Size = UDim2.new(0.462132096, 0, 0.0316272825, 0)
 	Example.ZIndex = 5
-	Example.Image = "rbxassetid://17770446463"
+	Example.Image = `rbxassetid://{image_id}`
 	Example.ImageTransparency = 1
 
 	UIAspectRatioConstraint.Parent = Example
