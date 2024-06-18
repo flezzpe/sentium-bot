@@ -112,7 +112,7 @@ function ui.init(draggable: boolean, parent: any)
 	local UIStroke = Instance.new("UIStroke")
 
 	ui.background.Name = "background"
-	ui.background.BackgroundColor3 = Color3.fromRGB(19, 19, 18)
+	ui.background.BackgroundColor3 = Color3.fromRGB(11, 11, 10)
 	ui.background.BackgroundTransparency = 0.025
 	ui.background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ui.background.BorderSizePixel = 0
@@ -192,7 +192,7 @@ function ui.init(draggable: boolean, parent: any)
 	UIPadding_2.PaddingTop = UDim.new(0.0149999997, 0)
 
 	UIStroke.Parent = ui.background
-	UIStroke.Color = Color3.fromRGB(74, 74, 74)
+	UIStroke.Color = Color3.fromRGB(48, 48, 48)
 	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 	task.defer(function()
@@ -370,7 +370,7 @@ function ui.create_toggle(name: string, section: string, callback)
 
 	Example.Name = name
 	Example.Parent = ui.background.Functions
-	Example.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+	Example.BackgroundColor3 = Color3.fromRGB(12, 12, 10)
 	Example.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Example.BorderSizePixel = 0
 	Example.Position = UDim2.new(0, 0, 0.017997425, 0)
@@ -412,7 +412,7 @@ function ui.create_toggle(name: string, section: string, callback)
 
 	Toggle.Name = "Toggle"
 	Toggle.Parent = Example
-	Toggle.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+	Toggle.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
 	Toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Toggle.BorderSizePixel = 0
 	Toggle.Position = UDim2.new(0.0322221965, 0, 0.274039954, 0)
@@ -435,18 +435,18 @@ function ui.create_toggle(name: string, section: string, callback)
 	checkmark.ImageTransparency = 1.000
 
 	UIStroke.Parent = Toggle
-	UIStroke.Color = Color3.fromRGB(74, 74, 74)
+	UIStroke.Color = Color3.fromRGB(48, 48, 48)
 	UIStroke.Transparency = 0.500
 	UIStroke.Thickness = 1.100
 	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 	UIStroke_2.Parent = Example
-	UIStroke_2.Color = Color3.fromRGB(74, 74, 74)
+	UIStroke_2.Color = Color3.fromRGB(48, 48, 48)
 	UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 	Bind.Name = "Bind"
 	Bind.Parent = Example
-	Bind.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+	Bind.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
 	Bind.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Bind.BorderSizePixel = 0
 	Bind.Position = UDim2.new(0.915752351, 0, 0.274039209, 0)
@@ -474,7 +474,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	Title_2.TextWrapped = true
 
 	UIStroke_3.Parent = Bind
-	UIStroke_3.Color = Color3.fromRGB(74, 74, 74)
+	UIStroke_3.Color = Color3.fromRGB(48, 48, 48)
 	UIStroke_3.Transparency = 0.500
 	UIStroke_3.Thickness = 1.100
 	UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
