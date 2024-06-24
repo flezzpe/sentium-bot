@@ -73,7 +73,7 @@ function ui:close()
 	end)
 
 	TweenService:Create(ui.background.Functions.UIListLayout, TweenInfo.new(2, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Padding = UDim.new(0.1, 0)
+		Padding = UDim.new(0.15, 0)
 	}):Play()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
@@ -146,7 +146,7 @@ function ui.init(draggable: boolean, parent: any)
 
 	UIPadding.Parent = Sections
 	UIPadding.PaddingLeft = UDim.new(0.05, 0)
-	UIPadding.PaddingTop = UDim.new(0.035, 0)
+	UIPadding.PaddingTop = UDim.new(0.01, 0)
 
 	line.Name = "line"
 	line.Parent = ui.background
