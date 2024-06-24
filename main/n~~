@@ -137,7 +137,7 @@ function ui.init(draggable: boolean, parent: any)
 	Sections.Size = UDim2.new(0.15, 0, 1, 0)
 	Sections.ZIndex = 2
 	Sections.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
-	Sections.ScrollBarThickness = 4
+	Sections.ScrollBarThickness = 0
 
 	UIListLayout.Parent = Sections
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -277,10 +277,6 @@ function ui.create_toggle(name: string, section: string, callback)
 	local toggled = false
 	local keybind = nil
 
-	-- Monstrum's Gui to Lua\n-- Version: 3.2
-
-	-- Instances:
-
 	local Example = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local Hitbox = Instance.new("TextButton")
@@ -299,10 +295,8 @@ function ui.create_toggle(name: string, section: string, callback)
 	local line = Instance.new("Frame")
 	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-	--Properties:
-
 	Example.Name = "Example"
-	Example.Parent = game.StarterGui.nurysium_Gui.background.Functions
+	Example.Parent = ui.background.Functions
 	Example.BackgroundColor3 = Color3.fromRGB(10, 11, 16)
 	Example.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Example.BorderSizePixel = 0
