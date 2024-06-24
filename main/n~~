@@ -51,7 +51,7 @@ function ui:open()
 	}):Play()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Size = UDim2.new(0.33, 0, 0.33, 0),
+		Size = UDim2.new(0.31, 0, 0.31, 0),
 		BackgroundTransparency = 0.025
 	}):Play()
 end
@@ -106,7 +106,7 @@ function ui.init(draggable: boolean, parent: any)
 	ui.background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ui.background.BorderSizePixel = 0
 	ui.background.Position = UDim2.new(0.5, 0, 0.5, 0)
-	ui.background.Size = UDim2.new(0.33, 0, 0.33, 0) 
+	ui.background.Size = UDim2.new(0.31, 0, 0.31, 0) 
 	ui.background.ZIndex = 2
 
 	ratio_fix.Parent = ui.background
@@ -357,7 +357,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	checkmark.BackgroundTransparency = 1.000
 	checkmark.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	checkmark.BorderSizePixel = 0
-	checkmark.Position = UDim2.new(0.275000006, 0, 0.200000003, 0)
+	checkmark.Position = UDim2.new(0.25, 0, 0.200000003, 0)
 	checkmark.Size = UDim2.new(0.545454562, 0, 0.600000024, 0)
 	checkmark.ZIndex = 15
 	checkmark.Image = "rbxassetid://9754130783"
@@ -412,6 +412,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	Title_2.ZIndex = 15
 	Title_2.Font = Enum.Font.GothamBold
 	Title_2.Text = "..."
+	Title_2.TextTransparency = 1
 	Title_2.TextColor3 = Color3.fromRGB(231, 231, 243)
 	Title_2.TextScaled = true
 	Title_2.TextSize = 14.000
