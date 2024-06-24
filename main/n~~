@@ -110,7 +110,7 @@ function ui.init(draggable: boolean, parent: any)
 	ui.background.ZIndex = 2
 
 	ratio_fix.Parent = ui.background
-	ratio_fix.AspectRatio = 1.419
+	ratio_fix.AspectRatio = 1.319
 
 	UICorner.CornerRadius = UDim.new(0.05, 0)
 	UICorner.Parent = ui.background
@@ -145,7 +145,7 @@ function ui.init(draggable: boolean, parent: any)
 	UIListLayout.Padding = UDim.new(0.02, 0)
 
 	UIPadding.Parent = Sections
-	UIPadding.PaddingLeft = UDim.new(0.1, 0)
+	UIPadding.PaddingLeft = UDim.new(0.05, 0)
 	UIPadding.PaddingTop = UDim.new(0.035, 0)
 
 	line.Name = "line"
@@ -177,7 +177,7 @@ function ui.init(draggable: boolean, parent: any)
 	UIListLayout_2.Padding = UDim.new(0.015, 0)
 
 	UIPadding_2.Parent = Functions
-	UIPadding_2.PaddingTop = UDim.new(0.001, 0)
+	UIPadding_2.PaddingTop = UDim.new(0.1, 0)
 
 	UIStroke.Parent = ui.background
 	UIStroke.Color = Color3.fromRGB(60, 60, 60)
