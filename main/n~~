@@ -51,7 +51,7 @@ function ui:open()
 	}):Play()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Size = UDim2.new(0.265, 0, 0.265, 0),
+		Size = UDim2.new(0.3, 0, 0.3, 0),
 		BackgroundTransparency = 0.025
 	}):Play()
 end
@@ -106,7 +106,7 @@ function ui.init(draggable: boolean, parent: any)
 	ui.background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ui.background.BorderSizePixel = 0
 	ui.background.Position = UDim2.new(0.5, 0, 0.5, 0)
-	ui.background.Size = UDim2.new(0.265, 0, 0.265, 0) 
+	ui.background.Size = UDim2.new(0.3, 0, 0.3, 0) 
 	ui.background.ZIndex = 2
 
 	ratio_fix.Parent = ui.background
@@ -177,7 +177,7 @@ function ui.init(draggable: boolean, parent: any)
 	UIListLayout_2.Padding = UDim.new(0.015, 0)
 
 	UIPadding_2.Parent = Functions
-	UIPadding_2.PaddingTop = UDim.new(0.015, 0)
+	UIPadding_2.PaddingTop = UDim.new(0.01, 0)
 
 	UIStroke.Parent = ui.background
 	UIStroke.Color = Color3.fromRGB(60, 60, 60)
