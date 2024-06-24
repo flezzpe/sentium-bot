@@ -26,17 +26,17 @@ local function animate_elements(speed: number)
 	ui.background["Functions"].UIListLayout.Padding = UDim.new(0.45, 0)
 
 	TweenService:Create(ui.background["Functions"].UIListLayout, TweenInfo.new(speed, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Padding = UDim.new(0.013, 0)
+		Padding = UDim.new(0.015, 0)
 	}):Play()
 end
 
 function ui:open()
-	TweenService:Create(color_shader, TweenInfo.new(0.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+	TweenService:Create(color_shader, TweenInfo.new(0.75, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 		Saturation = -1,
 		Contrast = 0.5
 	}):Play()
 
-	TweenService:Create(blur_shader, TweenInfo.new(0.65, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
+	TweenService:Create(blur_shader, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 		Size = 56
 	}):Play()
 
@@ -47,12 +47,11 @@ function ui:open()
 	end)
 
 	TweenService:Create(ui.background.Functions.UIListLayout, TweenInfo.new(2, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Padding = UDim.new(0.013, 0)
+		Padding = UDim.new(0.015, 0)
 	}):Play()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Size = UDim2.new(0.36, 0, 0.36, 0),
-		Position = UDim2.new(0.5, 0, 0.5, 0),
+		Size = UDim2.new(0.314, 0, 0.314, 0),
 		BackgroundTransparency = 0.025
 	}):Play()
 end
@@ -79,18 +78,8 @@ function ui:close()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 		Size = UDim2.new(0, 0, 0, 0),
-		Position = UDim2.new(0.5, 0, 1, 0),
 		BackgroundTransparency = 1
 	}):Play()
-end
-
-function ui.get_ratio()
-	local x = workspace.CurrentCamera.ViewportSize.X
-	local y = workspace.CurrentCamera.ViewportSize.Y
-
-	local screen_size = (x + y) / 3000
-
-	ui.scale = screen_size + math.max(0.85 - screen_size, 0)
 end
 
 function ui.init(draggable: boolean, parent: any)
@@ -112,19 +101,18 @@ function ui.init(draggable: boolean, parent: any)
 	local UIStroke = Instance.new("UIStroke")
 
 	ui.background.Name = "background"
-	ui.background.BackgroundColor3 = Color3.fromRGB(11, 11, 10)
-	ui.background.BackgroundTransparency = 0.025
+	ui.background.AnchorPoint = Vector2.new(0.5, 0.5)
+	ui.background.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 	ui.background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ui.background.BorderSizePixel = 0
 	ui.background.Position = UDim2.new(0.5, 0, 0.5, 0)
-	ui.background.Size = UDim2.new(0.36, 0, 0.36, 0)
+	ui.background.Size = UDim2.new(0.4, 0, 0.4, 0) 
 	ui.background.ZIndex = 2
-	ui.background.AnchorPoint = Vector2.new(0.5, 0.5)
 
 	ratio_fix.Parent = ui.background
-	ratio_fix.AspectRatio = 1.38
+	ratio_fix.AspectRatio = 1.419
 
-	UICorner.CornerRadius = UDim.new(0, 15)
+	UICorner.CornerRadius = UDim.new(0.05, 0)
 	UICorner.Parent = ui.background
 
 	backgroundShadow.Name = "backgroundShadow"
@@ -145,29 +133,29 @@ function ui.init(draggable: boolean, parent: any)
 	Sections.BackgroundTransparency = 1.000
 	Sections.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Sections.BorderSizePixel = 0
-	Sections.Position = UDim2.new(0, 0, 1.43380973e-07, 0)
-	Sections.Size = UDim2.new(0.0959975496, 0, 0.999999702, 0)
+	Sections.Position = UDim2.new(0, 0, 0, 0)
+	Sections.Size = UDim2.new(0.15, 0, 1, 0)
 	Sections.ZIndex = 2
-	Sections.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
-	Sections.ScrollBarThickness = 0
+	Sections.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
+	Sections.ScrollBarThickness = 4
 
 	UIListLayout.Parent = Sections
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0.0199999996, 0)
+	UIListLayout.Padding = UDim.new(0.02, 0)
 
 	UIPadding.Parent = Sections
-	UIPadding.PaddingLeft = UDim.new(0.100000001, 0)
-	UIPadding.PaddingTop = UDim.new(0.0450000018, 0)
+	UIPadding.PaddingLeft = UDim.new(0.1, 0)
+	UIPadding.PaddingTop = UDim.new(0.05, 0)
 
 	line.Name = "line"
 	line.Parent = ui.background
-	line.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	line.BackgroundTransparency = 0.250
+	line.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	line.BackgroundTransparency = 0.1
 	line.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	line.BorderSizePixel = 0
-	line.Position = UDim2.new(0.100873634, 0, -1.43380973e-07, 0)
-	line.Size = UDim2.new(0.00260593859, 0, 1, 0)
+	line.Position = UDim2.new(0.15, 0, 0, 0)
+	line.Size = UDim2.new(0.002, 0, 1, 0)
 	line.ZIndex = 5
 
 	Functions.Name = "Functions"
@@ -177,87 +165,23 @@ function ui.init(draggable: boolean, parent: any)
 	Functions.BackgroundTransparency = 1.000
 	Functions.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Functions.BorderSizePixel = 0
-	Functions.Position = UDim2.new(0.14448902, 0, 0.0399188399, 0)
-	Functions.Size = UDim2.new(0.813936114, 0, 0.91666007, 0)
+	Functions.Position = UDim2.new(0.17, 0, 0.04, 0)
+	Functions.Size = UDim2.new(0.8, 0, 0.92, 0)
 	Functions.ZIndex = 2
-	Functions.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+	Functions.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
 	Functions.ScrollBarThickness = 0
 
 	UIListLayout_2.Parent = Functions
 	UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout_2.Padding = UDim.new(0.0125000002, 0)
+	UIListLayout_2.Padding = UDim.new(0.015, 0)
 
 	UIPadding_2.Parent = Functions
-	UIPadding_2.PaddingTop = UDim.new(0.0149999997, 0)
+	UIPadding_2.PaddingTop = UDim.new(0.015, 0)
 
 	UIStroke.Parent = ui.background
-	UIStroke.Color = Color3.fromRGB(48, 48, 48)
+	UIStroke.Color = Color3.fromRGB(60, 60, 60)
 	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-	task.defer(function()
-		if draggable then
-			local function drag_script()
-
-				local script = Instance.new('LocalScript', ui.background)
-				local runService = (game:GetService("RunService"));
-
-				local gui = script.Parent
-
-				local dragging
-				local dragInput
-				local dragStart
-				local startPos
-
-				local function Lerp(a, b, m)
-					return a + (b - a) * m
-				end;
-
-				local lastMousePos
-				local lastGoalPos
-				local DRAG_SPEED = (9);
-
-				local function Update(dt)
-					if not (startPos) then return end;
-					if not (dragging) and (lastGoalPos) then
-						gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
-						return 
-					end;
-
-					local delta = (lastMousePos - UserInputService:GetMouseLocation())
-					local xGoal = (startPos.X.Offset - delta.X);
-					local yGoal = (startPos.Y.Offset - delta.Y);
-					lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
-					gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
-				end;
-
-				gui.InputBegan:Connect(function(input)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						dragging = true
-						dragStart = input.Position
-						startPos = gui.Position
-						lastMousePos = UserInputService:GetMouseLocation()
-
-						input.Changed:Connect(function()
-							if input.UserInputState == Enum.UserInputState.End then
-								dragging = false
-							end
-						end)
-					end
-				end)
-
-				gui.InputChanged:Connect(function(input)
-					if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-						dragInput = input
-					end
-				end)
-
-				runService.Heartbeat:Connect(Update)
-			end
-
-			coroutine.wrap(drag_script)()
-		end
-	end)
 
 	UserInputService.InputEnded:Connect(function(input, is_event)
 		if not is_event and (input.KeyCode == Enum.KeyCode.RightShift or input.KeyCode == Enum.KeyCode.Insert)  then
@@ -353,6 +277,10 @@ function ui.create_toggle(name: string, section: string, callback)
 	local toggled = false
 	local keybind = nil
 
+	-- Monstrum's Gui to Lua\n-- Version: 3.2
+
+	-- Instances:
+
 	local Example = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local Hitbox = Instance.new("TextButton")
@@ -361,23 +289,28 @@ function ui.create_toggle(name: string, section: string, callback)
 	local UICorner_2 = Instance.new("UICorner")
 	local checkmark = Instance.new("ImageButton")
 	local UIStroke = Instance.new("UIStroke")
+	local KeyHitbox = Instance.new("TextButton")
 	local UIStroke_2 = Instance.new("UIStroke")
 	local Bind = Instance.new("Frame")
 	local UICorner_3 = Instance.new("UICorner")
 	local Title_2 = Instance.new("TextLabel")
 	local UIStroke_3 = Instance.new("UIStroke")
-	local KeyHitbox = Instance.new("TextButton")
+	local backgroundShadow = Instance.new("ImageLabel")
+	local line = Instance.new("Frame")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-	Example.Name = name
-	Example.Parent = ui.background.Functions
-	Example.BackgroundColor3 = Color3.fromRGB(12, 12, 10)
+	--Properties:
+
+	Example.Name = "Example"
+	Example.Parent = game.StarterGui.nurysium_Gui.background.Functions
+	Example.BackgroundColor3 = Color3.fromRGB(10, 11, 16)
 	Example.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Example.BorderSizePixel = 0
-	Example.Position = UDim2.new(0, 0, 0.017997425, 0)
-	Example.Size = UDim2.new(0.976999998, 0, 0.0540000014, 0)
+	Example.Position = UDim2.new(0.016611442, 0, 0.01799752, 0)
+	Example.Size = UDim2.new(0.943917871, 0, 0.117819026, 0)
 	Example.ZIndex = 10
 
-	UICorner.CornerRadius = UDim.new(0, 10)
+	UICorner.CornerRadius = UDim.new(0.25, 0)
 	UICorner.Parent = Example
 
 	Hitbox.Name = "Hitbox"
@@ -386,9 +319,9 @@ function ui.create_toggle(name: string, section: string, callback)
 	Hitbox.BackgroundTransparency = 1.000
 	Hitbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Hitbox.BorderSizePixel = 0
-	Hitbox.Size = UDim2.new(0.86571455, 0, 1, 0)
+	Hitbox.Size = UDim2.new(0.881312847, 0, 1, 0)
 	Hitbox.ZIndex = 15
-	Hitbox.Font = Enum.Font.SourceSans
+	Hitbox.Font = Enum.Font.GothamBold
 	Hitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
 	Hitbox.TextSize = 1.000
 	Hitbox.TextTransparency = 1.000
@@ -403,7 +336,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	Title.Size = UDim2.new(0.291553348, 0, 0.441653311, 0)
 	Title.ZIndex = 10
 	Title.Font = Enum.Font.GothamBold
-	Title.Text = name
+	Title.Text = "Example"
 	Title.TextColor3 = Color3.fromRGB(231, 231, 243)
 	Title.TextScaled = true
 	Title.TextSize = 14.000
@@ -419,7 +352,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	Toggle.Size = UDim2.new(0.0437330045, 0, 0.441653311, 0)
 	Toggle.ZIndex = 15
 
-	UICorner_2.CornerRadius = UDim.new(0, 3)
+	UICorner_2.CornerRadius = UDim.new(0.349999994, 0)
 	UICorner_2.Parent = Toggle
 
 	checkmark.Name = "checkmark"
@@ -440,20 +373,36 @@ function ui.create_toggle(name: string, section: string, callback)
 	UIStroke.Thickness = 1.100
 	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
+	KeyHitbox.Name = "KeyHitbox"
+	KeyHitbox.Parent = Example
+	KeyHitbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	KeyHitbox.BackgroundTransparency = 1.000
+	KeyHitbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	KeyHitbox.BorderSizePixel = 0
+	KeyHitbox.Position = UDim2.new(0.881313086, 0, 0, 0)
+	KeyHitbox.Size = UDim2.new(0.118687212, 0, 1, 0)
+	KeyHitbox.ZIndex = 15
+	KeyHitbox.Font = Enum.Font.GothamBold
+	KeyHitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+	KeyHitbox.TextSize = 1.000
+	KeyHitbox.TextTransparency = 1.000
+
 	UIStroke_2.Parent = Example
 	UIStroke_2.Color = Color3.fromRGB(48, 48, 48)
+	UIStroke_2.Transparency = 0.700
 	UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 	Bind.Name = "Bind"
 	Bind.Parent = Example
 	Bind.BackgroundColor3 = Color3.fromRGB(9, 9, 9)
+	Bind.BackgroundTransparency = 0.200
 	Bind.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Bind.BorderSizePixel = 0
 	Bind.Position = UDim2.new(0.915752351, 0, 0.274039209, 0)
 	Bind.Size = UDim2.new(0.0437330045, 0, 0.441653311, 0)
 	Bind.ZIndex = 15
 
-	UICorner_3.CornerRadius = UDim.new(0, 3)
+	UICorner_3.CornerRadius = UDim.new(0.349999994, 0)
 	UICorner_3.Parent = Bind
 
 	Title_2.Name = "Title"
@@ -466,8 +415,7 @@ function ui.create_toggle(name: string, section: string, callback)
 	Title_2.Size = UDim2.new(0.511211991, 0, 0.600000024, 0)
 	Title_2.ZIndex = 15
 	Title_2.Font = Enum.Font.GothamBold
-	Title_2.Text = "..."
-	Title_2.TextTransparency = 1
+	Title_2.Text = ""
 	Title_2.TextColor3 = Color3.fromRGB(231, 231, 243)
 	Title_2.TextScaled = true
 	Title_2.TextSize = 14.000
@@ -475,23 +423,33 @@ function ui.create_toggle(name: string, section: string, callback)
 
 	UIStroke_3.Parent = Bind
 	UIStroke_3.Color = Color3.fromRGB(48, 48, 48)
-	UIStroke_3.Transparency = 0.500
+	UIStroke_3.Transparency = 0.760
 	UIStroke_3.Thickness = 1.100
 	UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
-	KeyHitbox.Name = "KeyHitbox"
-	KeyHitbox.Parent = Example
-	KeyHitbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	KeyHitbox.BackgroundTransparency = 1.000
-	KeyHitbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	KeyHitbox.BorderSizePixel = 0
-	KeyHitbox.Position = UDim2.new(0.865714431, 0, 0, 0)
-	KeyHitbox.Size = UDim2.new(0.134285703, 0, 1, 0)
-	KeyHitbox.ZIndex = 15
-	KeyHitbox.Font = Enum.Font.GothamBold
-	KeyHitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
-	KeyHitbox.TextSize = 1.000
-	KeyHitbox.TextTransparency = 1.000
+	backgroundShadow.Name = "backgroundShadow"
+	backgroundShadow.Parent = Example
+	backgroundShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	backgroundShadow.BackgroundTransparency = 1.000
+	backgroundShadow.Position = UDim2.new(0.5, 0, 0.489659071, 2)
+	backgroundShadow.Size = UDim2.new(1, 127, 0.979318142, 127)
+	backgroundShadow.ZIndex = 2
+	backgroundShadow.Image = "rbxassetid://12817543352"
+	backgroundShadow.ImageTransparency = 0.820
+	backgroundShadow.ScaleType = Enum.ScaleType.Slice
+	backgroundShadow.SliceCenter = Rect.new(85, 85, 427, 427)
+
+	line.Name = "line"
+	line.Parent = Example
+	line.BackgroundColor3 = Color3.fromRGB(19, 21, 29)
+	line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	line.BorderSizePixel = 0
+	line.Position = UDim2.new(0.876859903, 0, 0, 0)
+	line.Size = UDim2.new(0.00351326889, 0, 0.999999821, 0)
+	line.ZIndex = 15
+
+	UIAspectRatioConstraint.Parent = Example
+	UIAspectRatioConstraint.AspectRatio = 10.000
 
 	game:GetService("RunService").Heartbeat:Connect(function()
 		if keybind ~= nil then
@@ -517,13 +475,13 @@ function ui.create_toggle(name: string, section: string, callback)
 
 			if toggled then
 				ui.notify.render_Notify(`{name} enabled!`, 4)
-				
+
 				TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 					ImageTransparency = 0.25,
 				}):Play()
 			else
 				ui.notify.render_Notify(`{name} disabled!`, 4)
-				
+
 				TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 					ImageTransparency = 1,
 				}):Play()
@@ -603,7 +561,7 @@ function ui.create_toggle(name: string, section: string, callback)
 		toggled = not toggled
 
 		callback(toggled)
-		
+
 		if toggled then
 			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 				ImageTransparency = 0.25,
@@ -619,7 +577,7 @@ function ui.create_toggle(name: string, section: string, callback)
 		toggled = not toggled
 
 		callback(toggled)
-		
+
 		if toggled then
 			TweenService:Create(checkmark, TweenInfo.new(0.45, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
 				ImageTransparency = 0.25,
