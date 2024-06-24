@@ -51,7 +51,7 @@ function ui:open()
 	}):Play()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Size = UDim2.new(0.314, 0, 0.314, 0),
+		Size = UDim2.new(0.265, 0, 0.265, 0),
 		BackgroundTransparency = 0.025
 	}):Play()
 end
@@ -102,11 +102,11 @@ function ui.init(draggable: boolean, parent: any)
 
 	ui.background.Name = "background"
 	ui.background.AnchorPoint = Vector2.new(0.5, 0.5)
-	ui.background.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+	ui.background.BackgroundColor3 = Color3.fromRGB(10, 11, 16)
 	ui.background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ui.background.BorderSizePixel = 0
 	ui.background.Position = UDim2.new(0.5, 0, 0.5, 0)
-	ui.background.Size = UDim2.new(0.4, 0, 0.4, 0) 
+	ui.background.Size = UDim2.new(0.265, 0, 0.265, 0) 
 	ui.background.ZIndex = 2
 
 	ratio_fix.Parent = ui.background
@@ -122,7 +122,7 @@ function ui.init(draggable: boolean, parent: any)
 	backgroundShadow.Position = UDim2.new(0.5, 0, 0.5, 2)
 	backgroundShadow.Size = UDim2.new(1, 127, 1, 127)
 	backgroundShadow.Image = "rbxassetid://12817543352"
-	backgroundShadow.ImageTransparency = 0.400
+	backgroundShadow.ImageTransparency = 0
 	backgroundShadow.ScaleType = Enum.ScaleType.Slice
 	backgroundShadow.SliceCenter = Rect.new(85, 85, 427, 427)
 
@@ -146,7 +146,7 @@ function ui.init(draggable: boolean, parent: any)
 
 	UIPadding.Parent = Sections
 	UIPadding.PaddingLeft = UDim.new(0.1, 0)
-	UIPadding.PaddingTop = UDim.new(0.05, 0)
+	UIPadding.PaddingTop = UDim.new(0.035, 0)
 
 	line.Name = "line"
 	line.Parent = ui.background
