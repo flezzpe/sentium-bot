@@ -146,7 +146,7 @@ function ui.init(draggable: boolean, parent: any)
 
 	UIPadding.Parent = Sections
 	UIPadding.PaddingLeft = UDim.new(0.05, 0)
-	UIPadding.PaddingTop = UDim.new(0.01, 0)
+	UIPadding.PaddingTop = UDim.new(0.045, 0)
 
 	line.Name = "line"
 	line.Parent = ui.background
@@ -177,7 +177,7 @@ function ui.init(draggable: boolean, parent: any)
 	UIListLayout_2.Padding = UDim.new(0.015, 0)
 
 	UIPadding_2.Parent = Functions
-	UIPadding_2.PaddingTop = UDim.new(0.1, 0)
+	UIPadding_2.PaddingTop = UDim.new(0.04, 0)
 
 	UIStroke.Parent = ui.background
 	UIStroke.Color = Color3.fromRGB(60, 60, 60)
