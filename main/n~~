@@ -177,7 +177,7 @@ function ui.init(draggable: boolean, parent: any)
 	UIListLayout_2.Padding = UDim.new(0.015, 0)
 
 	UIPadding_2.Parent = Functions
-	UIPadding_2.PaddingTop = UDim.new(0.0015, 0)
+	UIPadding_2.PaddingTop = UDim.new(0.001, 0)
 
 	UIStroke.Parent = ui.background
 	UIStroke.Color = Color3.fromRGB(60, 60, 60)
