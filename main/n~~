@@ -51,7 +51,7 @@ function ui:open()
 	}):Play()
 
 	TweenService:Create(ui.background, TweenInfo.new(1, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-		Size = UDim2.new(0.3, 0, 0.3, 0),
+		Size = UDim2.new(0.33, 0, 0.33, 0),
 		BackgroundTransparency = 0.025
 	}):Play()
 end
@@ -106,7 +106,7 @@ function ui.init(draggable: boolean, parent: any)
 	ui.background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ui.background.BorderSizePixel = 0
 	ui.background.Position = UDim2.new(0.5, 0, 0.5, 0)
-	ui.background.Size = UDim2.new(0.3, 0, 0.3, 0) 
+	ui.background.Size = UDim2.new(0.33, 0, 0.33, 0) 
 	ui.background.ZIndex = 2
 
 	ratio_fix.Parent = ui.background
@@ -274,6 +274,7 @@ end
 
 function ui.create_toggle(name: string, section: string, callback)
 	callback = callback or function() end
+
 	local toggled = false
 	local keybind = nil
 
@@ -394,10 +395,10 @@ function ui.create_toggle(name: string, section: string, callback)
 	Bind.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Bind.BorderSizePixel = 0
 	Bind.Position = UDim2.new(0.915752351, 0, 0.274039209, 0)
-	Bind.Size = UDim2.new(0.0437330045, 0, 0.441653311, 0)
+	Bind.Size = UDim2	.new(0.0437330045, 0, 0.441653311, 0)
 	Bind.ZIndex = 15
 
-	UICorner_3.CornerRadius = UDim.new(0.349999994, 0)
+	UICorner_3.CornerRadius = UDim.new(0.249999994, 0)
 	UICorner_3.Parent = Bind
 
 	Title_2.Name = "Title"
@@ -406,11 +407,11 @@ function ui.create_toggle(name: string, section: string, callback)
 	Title_2.BackgroundTransparency = 1.000
 	Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Title_2.BorderSizePixel = 0
-	Title_2.Position = UDim2.new(0.256999999, 0, 0.179000005, 0)
+	Title_2.Position = UDim2.new(0.266999999, 0, 0.179000005, 0)
 	Title_2.Size = UDim2.new(0.511211991, 0, 0.600000024, 0)
 	Title_2.ZIndex = 15
 	Title_2.Font = Enum.Font.GothamBold
-	Title_2.Text = ""
+	Title_2.Text = "..."
 	Title_2.TextColor3 = Color3.fromRGB(231, 231, 243)
 	Title_2.TextScaled = true
 	Title_2.TextSize = 14.000
